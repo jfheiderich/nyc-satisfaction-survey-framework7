@@ -1,44 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import { getDevice }  from 'framework7/lite-bundle';
-import {
-  f7,
-  f7ready,
-  App,
-  View,
-} from 'framework7-react';
-import cordovaApp from '../js/cordova-app';
+import React, { useState, useEffect } from "react";
+import { getDevice } from "framework7/lite-bundle";
+import { f7, f7ready, App, View } from "framework7-react";
+import cordovaApp from "../js/cordova-app";
 
-import routes from '../js/routes';
-import store from '../js/store';
+import routes from "../js/routes";
+import store from "../js/store";
 
 const MyApp = () => {
-
   const device = getDevice();
   // Framework7 Parameters
   const f7params = {
-    name: 'nyc-satisfaction-survey', // App name
-      theme: 'auto', // Automatic theme detection
+    name: "nyc-satisfaction-survey", // App name
+    theme: "auto", // Automatic theme detection
 
+    // App store
+    store: store,
+    // App routes
+    routes: routes,
 
-
-
-      // App store
-      store: store,
-      // App routes
-      routes: routes,
-
-
-
-      // Input settings
-      input: {
-        scrollIntoViewOnFocus: device.cordova,
-        scrollIntoViewCentered: device.cordova,
-      },
-      // Cordova Statusbar settings
-      statusbar: {
-        iosOverlaysWebView: true,
-        androidOverlaysWebView: false,
-      },
+    // Input settings
+    input: {
+      scrollIntoViewOnFocus: device.cordova,
+      scrollIntoViewCentered: device.cordova,
+    },
+    // Cordova Statusbar settings
+    statusbar: {
+      iosOverlaysWebView: true,
+      androidOverlaysWebView: false,
+    },
   };
 
   f7ready(() => {
@@ -51,12 +40,12 @@ const MyApp = () => {
   });
 
   return (
-    <App { ...f7params }>
-
-        {/* Your main view, should have "view-main" class */}
-        <View main className="safe-areas" url="/" />
-
+    <App {...f7params}>
+      <View main className="safe-areas" url="/" />
+      {/* <View className="safe-areas" url="/signIn" />
+      <View className="safe-areas" url="/signUp" />
+      <View className="safe-areas" url="/survey" /> */}
     </App>
   );
-}
+};
 export default MyApp;
