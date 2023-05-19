@@ -37,6 +37,11 @@
   width: 100vw;
 }
 
+.signUp-page {
+  background-color: var(--nyc-black);
+  width: 100vw;
+}
+
 .form {
   background: #000;
   border: 1px solid var(--nyc-green);
