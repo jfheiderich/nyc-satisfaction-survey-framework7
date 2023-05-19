@@ -157,18 +157,18 @@
   background-color: var(--nyc-white);
 }
 
-.success {
+.success-page {
+  background-color: var(--nyc-black);
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.success > h1 {
   color: var(--nyc-green);
   font-weight: lighter;
-  font-size: 20px;
+  font-size: 10px;
+  padding: 15px;
 }
 
 /* @media (min-width: 600px) {
