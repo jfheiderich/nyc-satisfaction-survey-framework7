@@ -11,11 +11,6 @@
   --nyc-white: #fbfbfb;
 }
 
-body {
-  background-color: var(--nyc-black);
-  font-family: "Open Sans", sans-serif;
-}
-
 .home-page {
   background-color: var(--nyc-black);
   width: 100vw;
@@ -37,11 +32,16 @@ body {
   font-size: 20px;
 }
 
+.signIn-page {
+  background-color: var(--nyc-black);
+  width: 100vw;
+}
+
 .form {
   background: #000;
   border: 1px solid var(--nyc-green);
   height: fit-content;
-  margin: 20px;
+  margin: 50px 10px;
   padding: 20px;
 }
 
