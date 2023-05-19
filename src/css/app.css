@@ -42,6 +42,11 @@
   width: 100vw;
 }
 
+.survey-page {
+  background-color: var(--nyc-black);
+  width: 100vw;
+}
+
 .form {
   background: #000;
   border: 1px solid var(--nyc-green);
@@ -98,6 +103,7 @@
   justify-content: center;
   align-items: center;
   font-size: 15px;
+  margin: 50px 10px;
 }
 
 .survey-container > h1 {
@@ -148,6 +154,7 @@
 
 .text-area > textarea {
   margin-top: 16px;
+  background-color: var(--nyc-white);
 }
 
 .success {

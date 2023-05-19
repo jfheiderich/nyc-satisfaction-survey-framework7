@@ -43,7 +43,7 @@ const SignUp = () => {
 
         <Button>Cadastrar</Button>
         <p>
-          Já tem um conta? <Link href="">Clique aqui!</Link>
+          Já tem um conta? <Link href="/survey">Clique aqui!</Link>
         </p>
       </div>
     </Page>
