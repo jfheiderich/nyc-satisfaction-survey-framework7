@@ -1,12 +1,12 @@
-import { Link, Page } from "framework7-react";
+import { Button, Page } from "framework7-react";
 
 const SuccessPage = () => {
-  const logOut = () => {
+  const LogOut = () => {
     localStorage.clear();
   };
 
   return (
-    <Page className="success-page">
+    <Page name="success" className="success-page">
       <img alt="nyc-logo" src="nyc-logo.jpeg" width={200} height={200} />
       <h1>Obrigado por responder nosso questionário!</h1>
       <br />
@@ -14,7 +14,9 @@ const SuccessPage = () => {
         Sua ajuda melhora a qualidade dos nossos produtos e ajuda você a ter uma
         melhor experiência conosco!
       </h1>
-      <Link className="button">Sair</Link>
+      <Button onClick={LogOut} className="button">
+        Sair
+      </Button>
     </Page>
   );
 };

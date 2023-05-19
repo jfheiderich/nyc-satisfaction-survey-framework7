@@ -41,8 +41,10 @@ const MyApp = () => {
 
   return (
     <App {...f7params}>
-      {/* Your main view, should have "view-main" class */}
       <View main className="safe-areas" url="/" />
+      {/* <View className="safe-areas" url="/signIn" />
+      <View className="safe-areas" url="/signUp" />
+      <View className="safe-areas" url="/survey" /> */}
     </App>
   );
 };

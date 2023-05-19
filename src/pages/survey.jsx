@@ -1,5 +1,7 @@
-import { Button, Link, Page } from "framework7-react";
-import { useState } from "react";
+import { Button, Page } from "framework7-react";
+import { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Survey = () => {
   const [gender, setGender] = useState("male");
@@ -15,23 +17,45 @@ const Survey = () => {
   const [attractionsDiscounts, setAttractionsDiscounts] = useState(false);
   const [complement, setComplement] = useState("");
 
-  // const userAnswers = {
-  //   gender,
-  //   age,
-  //   mobileApp,
-  //   security,
-  //   transparency,
-  //   transactionsAgility,
-  //   solveProblemsAgility,
-  //   pointsProgram,
-  //   lowRates,
-  //   creditToBuy,
-  //   attractionsDiscounts,
-  //   complement,
-  // };
+  useEffect(() => {
+    if (!localStorage.getItem("@logged")) {
+      //navigation to "/"
+    }
+  });
+
+  const surveyHandler = () => {
+    const userAnswers = {
+      gender,
+      age,
+      mobileApp,
+      security,
+      transparency,
+      transactionsAgility,
+      solveProblemsAgility,
+      pointsProgram,
+      lowRates,
+      creditToBuy,
+      attractionsDiscounts,
+      complement,
+    };
+
+    if (!gender) {
+      toast.info(`Adicione o seu gênero`, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      return;
+    } else if (age === "0") {
+      toast.info(`Adicione sua idade corretamente`, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      return;
+    }
+
+    localStorage.setItem("@userAnswers", JSON.stringify(userAnswers));
+  };
 
   return (
-    <Page className="survey-page">
+    <Page name="survey" className="survey-page">
       <div className="survey-container">
         <h1>Nós da NYC queremos ouvir você!</h1>
         <h2>Sua opinião é super importante para nós!</h2>
@@ -198,11 +222,12 @@ const Survey = () => {
         </span>
 
         <div className="button-container">
-          <Link className="button" href="/success">
+          <Button className="button" onClick={surveyHandler} s>
             Enviar Respostas
-          </Link>
+          </Button>
         </div>
       </div>
+      <ToastContainer />
     </Page>
   );
 };
