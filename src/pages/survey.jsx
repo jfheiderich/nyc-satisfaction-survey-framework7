@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Survey = () => {
+const Survey = ({ f7router }) => {
   const [gender, setGender] = useState("male");
   const [age, setAge] = useState("0");
   const [mobileApp, setMobileApp] = useState(false);
@@ -19,7 +19,7 @@ const Survey = () => {
 
   useEffect(() => {
     if (!localStorage.getItem("@logged")) {
-      //navigation to "/"
+      f7router.navigate("/");
     }
   });
 
@@ -52,6 +52,7 @@ const Survey = () => {
     }
 
     localStorage.setItem("@userAnswers", JSON.stringify(userAnswers));
+    f7router.navigate("/success");
   };
 
   return (

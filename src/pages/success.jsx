@@ -1,6 +1,6 @@
 import { Button, Page } from "framework7-react";
 
-const SuccessPage = () => {
+const SuccessPage = ({ f7router }) => {
   const LogOut = () => {
     localStorage.clear();
   };

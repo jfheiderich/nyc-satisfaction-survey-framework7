@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import { Page, Link, Block } from "framework7-react";
 import { users } from "../usersMock";
 
-const HomePage = () => {
+const HomePage = ({ f7router }) => {
   useEffect(() => {
     localStorage.setItem("@users", JSON.stringify(users));
     if (localStorage.getItem("@logged")) {
-      //navigation to "/survey"
+      f7router.navigate("/survey");
     }
   });
 

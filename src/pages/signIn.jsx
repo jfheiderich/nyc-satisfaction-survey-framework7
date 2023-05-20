@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const SignIn = () => {
+const SignIn = ({ f7router }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showSurvey, setShowSurvey] = useState(false);
@@ -45,8 +45,7 @@ const SignIn = () => {
       }
       localStorage.setItem("@logged", email);
     }
-
-    //navigation to "/survey"
+    f7router.navigate("/survey");
   };
 
   return (
