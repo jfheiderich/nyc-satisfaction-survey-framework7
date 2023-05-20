@@ -63,6 +63,7 @@ const SignUp = ({ f7router }) => {
           name="name"
           value={name}
           onChange={(event) => setName(event.target.value)}
+          placeholder="Digite seu nome"
         />
         <label className="label" htmlFor="email">
           Email
@@ -73,6 +74,7 @@ const SignUp = ({ f7router }) => {
           name="email"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
+          placeholder="Digite seu melhor email"
         />
 
         <label className="label" htmlFor="password">
@@ -84,11 +86,12 @@ const SignUp = ({ f7router }) => {
           name="password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
+          placeholder="Digite sua senha"
         />
 
         <Button onClick={createAccount}>Cadastrar</Button>
         <p>
-          Já tem um conta? <Link href="/survey">Clique aqui!</Link>
+          Já tem um conta? <Link href="/signIn">Clique aqui!</Link>
         </p>
       </div>
       <ToastContainer />

@@ -60,6 +60,7 @@ const SignIn = ({ f7router }) => {
           name="email"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
+          placeholder="Digite seu email"
         />
 
         <label className="label" htmlFor="password">
@@ -71,6 +72,7 @@ const SignIn = ({ f7router }) => {
           name="password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
+          placeholder="Digite sua senha"
         />
 
         <Button onClick={handleLogin}>Login</Button>

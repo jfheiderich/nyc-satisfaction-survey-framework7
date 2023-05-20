@@ -3,6 +3,7 @@ import { Button, Page } from "framework7-react";
 const SuccessPage = ({ f7router }) => {
   const LogOut = () => {
     localStorage.clear();
+    f7router.navigate("/");
   };
 
   return (
@@ -14,9 +15,11 @@ const SuccessPage = ({ f7router }) => {
         Sua ajuda melhora a qualidade dos nossos produtos e ajuda você a ter uma
         melhor experiência conosco!
       </h1>
-      <Button onClick={LogOut} className="button">
-        Sair
-      </Button>
+      <div className="button-container">
+        <Button onClick={LogOut} className="button">
+          Sair
+        </Button>
+      </div>
     </Page>
   );
 };

@@ -214,6 +214,7 @@ const Survey = ({ f7router }) => {
         <span className="text-area">
           <label htmlFor="other">Algo mais? Conta pra gente!</label>
           <textarea
+            placeholder=""
             name="other"
             cols={30}
             rows={10}

@@ -9,6 +9,7 @@
   --nyc-black: #000000;
   --nyc-green: #07b901;
   --nyc-white: #fbfbfb;
+  --nyc-gray: #d1d1d1;
 }
 
 .home-page {
@@ -154,7 +155,9 @@
 
 .text-area > textarea {
   margin-top: 16px;
-  background-color: var(--nyc-white);
+  background-color: var(--nyc-gray);
+  color: var(--nyc-black);
+  padding: 8px;
 }
 
 .success-page {
@@ -166,7 +169,7 @@
   align-items: center;
   text-align: center;
   color: var(--nyc-green);
-  font-weight: lighter;
+  font-weight: 400;
   font-size: 10px;
   padding: 15px;
 }
@@ -178,12 +181,9 @@
     align-items: center;
   }
 
-  .default-button {
-    font-size: 15px;
-  }
-
   .button-container {
     width: 40%;
+    margin: auto;
   }
 
   .home-page__container > img {
@@ -197,6 +197,7 @@
 
   .form > .input {
     margin-bottom: 5%;
+    padding: 8px;
   }
 
   .survey-container > h1 {
