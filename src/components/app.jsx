@@ -41,10 +41,10 @@ const MyApp = () => {
 
   return (
     <App {...f7params}>
-      <View main className="safe-areas" url="/" />
-      {/* <View className="safe-areas" url="/signIn" />
+      <View className="safe-areas" url="/" />
+      <View className="safe-areas" url="/signIn" />
       <View className="safe-areas" url="/signUp" />
-      <View className="safe-areas" url="/survey" /> */}
+      <View className="safe-areas" url="/survey" />
     </App>
   );
 };

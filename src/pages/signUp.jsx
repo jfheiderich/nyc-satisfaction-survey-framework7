@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const SignUp = () => {
+const SignUp = ({ f7router }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -48,7 +48,7 @@ const SignUp = () => {
 
       localStorage.setItem("@users", usersUpdated);
     }
-    //navigation to "/signIn"
+    f7router.navigate("/signIn");
   };
 
   return (
@@ -63,6 +63,7 @@ const SignUp = () => {
           name="name"
           value={name}
           onChange={(event) => setName(event.target.value)}
+          placeholder="Digite seu nome"
         />
         <label className="label" htmlFor="email">
           Email
@@ -73,6 +74,7 @@ const SignUp = () => {
           name="email"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
+          placeholder="Digite seu melhor email"
         />
 
         <label className="label" htmlFor="password">
@@ -84,11 +86,12 @@ const SignUp = () => {
           name="password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
+          placeholder="Digite sua senha"
         />
 
         <Button onClick={createAccount}>Cadastrar</Button>
         <p>
-          Já tem um conta? <Link href="/survey">Clique aqui!</Link>
+          Já tem um conta? <Link href="/signIn">Clique aqui!</Link>
         </p>
       </div>
       <ToastContainer />
